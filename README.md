@@ -10,7 +10,7 @@ MapReduce examples online where javascript functions are stored as
 strings in another programming language like this:
 
 ![javascript functions stored as strings in ruby... yuck,
-right?](/js-functions-as-strings-in-ruby.png)
+right?](https://danhixon.s3.amazonaws.com/js-functions-as-strings-in-ruby.png)
 
 So, let's put our javascript into .js files (or .coffee!) and write
 specs for them, right? It sounds like something the cool kids would want
