@@ -15,9 +15,10 @@ strings in another programming language like this:
 right?](https://danhixon.s3.amazonaws.com/js-functions-as-strings-in-ruby.png)
 
 [Kyle Banker's Mongodb Resource](http://kylebanker.com/blog/2009/12/mongodb-map-reduce-basics/)
-is excellent. The above example should not reflect poorly on him.
+is excellent. The above example should not reflect poorly on him– it's
+just the state of the art.
 
-So, let's put our javascript into .js files (or .coffee!) and write
+So, let's put our javascript into executable files and write
 specs for them, right? It sounds like something the cool kids would want
 you to do anyway.
 

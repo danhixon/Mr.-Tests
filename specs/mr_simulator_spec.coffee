@@ -8,10 +8,6 @@ describe 'map reduce simulator', ->
       { _id: 12, gender: "F", weight: 125 },
       { _id: 11, gender: "F", weight: 138 }
     ]
-    sums = [
-      { gender: "M", value: 309 },
-      { gender: "F", value: 263 }
-    ]
 
     mr_set =
       map: ->
@@ -20,7 +16,10 @@ describe 'map reduce simulator', ->
         sum = vals.reduce (t, s) -> t + s
 
     reduction = map_reducer.execute people, mr_set
-    expect(reduction).toEqual sums
+    expect(reduction).toEqual [
+      { gender: "M", value: 309 },
+      { gender: "F", value: 263 }
+    ]
 
   it 'should handle the tags sample from mongodb.org', ->
     things = [
@@ -28,11 +27,6 @@ describe 'map reduce simulator', ->
       { _id : 2, tags : ['cat'] },
       { _id : 3, tags : ['mouse', 'cat', 'dog'] },
       { _id : 4, tags : []  }
-    ]
-    expected_result = [
-      { _id : 'dog', value : { count : 2 } },
-      { _id : 'cat', value : { count : 3 } },
-      { _id : 'mouse', value : { count : 1 } }
     ]
 
     mr_set =
@@ -49,7 +43,11 @@ describe 'map reduce simulator', ->
         count: total
 
     reduction = map_reducer.execute things, mr_set
-    expect(reduction).toEqual expected_result
+    expect(reduction).toEqual [
+      { _id : 'dog', value : { count : 2 } },
+      { _id : 'cat', value : { count : 3 } },
+      { _id : 'mouse', value : { count : 1 } }
+    ]
 
 #  it 'should handle ', ->
 
