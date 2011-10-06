@@ -1,4 +1,3 @@
-# TODO: rename map.coffee to map_reduce_simulator
 map_reducer = require '../lib/mr_simulator'
 
 describe 'map reduce simulator', ->
@@ -23,7 +22,7 @@ describe 'map reduce simulator', ->
     reduction = map_reducer.execute people, mr_set
     expect(reduction).toEqual sums
 
-  it 'should handle the tags sample from mongodb', ->
+  it 'should handle the tags sample from mongodb.org', ->
     things = [
       { _id : 1, tags : ['dog', 'cat'] },
       { _id : 2, tags : ['cat'] },

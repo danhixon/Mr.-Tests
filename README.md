@@ -1,5 +1,7 @@
 Mr. Tests
 ============
+<img src="https://danhixon.s3.amazonaws.com/mr-tests.jpg" alt="Meet Mr.
+Tests!" style="float:right" />
 
 Mongo MapReduce Tests
 
@@ -56,6 +58,10 @@ expectedResult: [
   { gender: "M", value: 309 },
   { gender: "F", value: 263 }
   ]
+
+Then in your application code you could parse the yaml and get the
+functions as strings since that is how your mongo driver want them.
+
 
 Enjoy!
 
