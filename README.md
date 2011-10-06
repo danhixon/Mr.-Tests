@@ -12,6 +12,9 @@ strings in another programming language like this:
 ![javascript functions stored as strings in ruby... yuck,
 right?](https://danhixon.s3.amazonaws.com/js-functions-as-strings-in-ruby.png)
 
+[Kyle Banker's Mongodb Resource](http://kylebanker.com/blog/2009/12/mongodb-map-reduce-basics/)
+is excellent. The above example should not reflect poorly on him.
+
 So, let's put our javascript into .js files (or .coffee!) and write
 specs for them, right? It sounds like something the cool kids would want
 you to do anyway.
