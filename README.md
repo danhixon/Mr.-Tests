@@ -42,8 +42,7 @@ anything more than a few crude code files.
 MR Files
 --------
 
-I'm hoping that if they are stored as JSON languages like ruby will be
-able to parse them as YAML in order to pull the strings out.
+I'm hoping that I can figure out a way to store the MR files as JSON.  That was languages like ruby will be able to parse them as YAML in order to pull the strings out. JSON is a subset of YAML, right?
 
 weight_sums_by_gender.mr.yaml:
 
