@@ -52,7 +52,7 @@ describe 'map reduce simulator', ->
     reduction = map_reducer.execute things, mr_set
     expect(reduction).toEqual expected_result
 
-  it 'should handle ', ->
+#  it 'should handle ', ->
 
 #
 # from: http://nosql.mypopescu.com/post/394779847/mongodb-tutorial-mapreduce

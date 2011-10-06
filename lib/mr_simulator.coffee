@@ -1,4 +1,4 @@
-_ = require '../js/underscore'
+_ = require 'underscore'
 root = exports ? this
 
 root.emissions = []
