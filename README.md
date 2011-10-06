@@ -29,7 +29,7 @@ Installation
 These instructions are aspirational and written as a goal for me since
 at time of writing there is no "installation", just code.
 
-$ npm install mr_tests
+    $ npm install mr_tests
 
 Usage
 -----
@@ -37,7 +37,7 @@ Usage
 These instructions are also aspiration. Since there is no install or
 anything more than a few crude code files.
 
-~/your_project/ $ mr_tests js/path_to_mr_files
+    ~/your_project/ $ mr_tests js/path_to_mr_files
 
 MR Files
 --------
@@ -47,18 +47,18 @@ able to parse them as YAML in order to pull the strings out.
 
 weight_sums_by_gender.mr.yaml:
 
-map: function() { emit( { gender: this.gender }, this.weight }
-reduce: function (key, vals) { sum = vals.reduce(function(t,s) { return t + s }
-sampleSet: [
-      { _id: 14, gender: "M", weight: 165 },
-      { _id: 15, gender: "M", weight: 144 },
-      { _id: 12, gender: "F", weight: 125 },
-      { _id: 11, gender: "F", weight: 138 }
-  ]
-expectedResult: [
-  { gender: "M", value: 309 },
-  { gender: "F", value: 263 }
-  ]
+    map: function() { emit( { gender: this.gender }, this.weight }
+    reduce: function (key, vals) { sum = vals.reduce(function(t,s) { return t + s }
+    sampleSet: [
+        { _id: 14, gender: "M", weight: 165 },
+        { _id: 15, gender: "M", weight: 144 },
+        { _id: 12, gender: "F", weight: 125 },
+        { _id: 11, gender: "F", weight: 138 }
+    ]
+    expectedResult: [
+      { gender: "M", value: 309 },
+      { gender: "F", value: 263 }
+    ]
 
 Then in your application code you could parse the yaml and get the
 functions as strings since that is how your mongo driver want them.
