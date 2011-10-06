@@ -1,7 +1,7 @@
 Mr. Tests
 ============
 <img src="https://danhixon.s3.amazonaws.com/mr-tests.jpg" alt="Meet Mr.
-Tests!" style="float:right" />
+Tests!" style="display:block;float:right" />
 
 Mongo MapReduce Tests
 
