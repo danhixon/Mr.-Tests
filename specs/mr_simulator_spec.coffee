@@ -1,5 +1,6 @@
 map_reducer = require '../lib/mr_simulator'
 
+
 describe 'map reduce simulator', ->
   it 'should perform a simple map reduction', ->
     people = [
