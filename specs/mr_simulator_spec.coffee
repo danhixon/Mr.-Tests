@@ -11,7 +11,7 @@ describe 'map reduce simulator', ->
 
     mr_set =
       map: ->
-        this.emit { gender: this.gender }, this.weight
+        emit { gender: this.gender }, this.weight
       reduce: (key, vals) ->
         sum = vals.reduce (t, s) -> t + s
 
@@ -32,7 +32,7 @@ describe 'map reduce simulator', ->
     mr_set =
       map: ->
         @tags.forEach (z) ->
-          map_reducer.emit z, count: 1
+          emit z, count: 1
       reduce: (key, values) ->
         total = 0
         i = 0
