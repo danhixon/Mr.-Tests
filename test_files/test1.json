@@ -9,7 +9,12 @@
     { gender: "M", value: 309 },
     { gender: "F", value: 265 }
   ],
-  map: fuction() {
+  map: function() {
     emit({ gender: this.gender }, this.weight);
+  },
+  reduce: function(key, vals) {
+    return vals.reduce(function(t, s) {
+      return t + s;
+    });
   }
 }

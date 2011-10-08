@@ -24,9 +24,8 @@ describe 'file parser', ->
     ]
 
   it 'should read the map method', ->
-    expect(map_reducer.map).toEqual ->
+    expect(map_reducer.map).toBeDefined ->
       emit { gender: this.gender }, this.weight
 
   it 'should read the reduce method', ->
-    expect(map_reducer.reduce).toEqual (key, vals) ->
-      sum = vals.reduce (t, s) -> t + s
+    expect(map_reducer.reduce(null,[2,3])).toEqual 5
