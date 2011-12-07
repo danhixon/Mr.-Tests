@@ -3,7 +3,7 @@ map_reducer = {}
 
 describe 'file parser', ->
   beforeEach ->
-    file_parser.read_file 'test_files/test1.json', (mr) ->
+    file_parser.read_file 'test_files/test.html', (mr) ->
       map_reducer = mr
     # the file is read asyncronously so we have to wait for it
     waitsFor ->

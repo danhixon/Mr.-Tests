@@ -1,0 +1,101 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf230
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww12320\viewh13200\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs40 \cf0 What type of file to use for Mr. Tests files?
+\fs24 \
+\
+
+\fs50 yaml
+\fs24 \
+
+\b Pro
+\b0 \
+Flexible parsing using existing tools in production\
+Flexible parsing using existing tools in Mr. Tests\
+\
+
+\b Con\
+
+\b0 No Syntax Highlighting\
+Somewhat hard to write\
+\
+
+\fs50 javascript
+\fs24 \
+
+\b Pro\
+
+\b0 Syntax Highlighting\
+Flexible (easiest) parsing using existing tools in Mr. Tests\
+\
+
+\b Con
+\b0 \
+No parsing using existing tools in production - must write custom parsers - /^(map|expectedResults|collection|reduce):/\
+\
+\
+
+\fs50 HTML
+\fs24 \
+
+\b Pro
+\b0 \
+Flexible parsing using existing tools in production\
+Flexible parsing using existing tools in Mr. Tests\
+Some editor support for syntax highlighting (at least my favs: Vim & Textmate)\
+\
+\
+
+\b Con\
+
+\b0 Seems kind of strange to store code in a templating language\'85 old fashioned?\
+\
+\
+Question I almost post to Stack Overflow:\
+\
+I'm building a MongoDB Map Reduce tool which uses test files with the following:\
+\
+    \{\
+      collection: [\
+          \{ _id: 14, gender: "M", weight: 165 \},\
+          \{ _id: 15, gender: "M", weight: 144 \},\
+          \{ _id: 12, gender: "F", weight: 125 \},\
+          \{ _id: 11, gender: "F", weight: 138 \}\
+      ],\
+      expectedResults: [\
+        \{ gender: "M", value: 309 \},\
+        \{ gender: "F", value: 265 \}\
+      ],\
+      map: function() \{\
+        emit(\{ gender: this.gender \}, this.weight);\
+      \},\
+      reduce: function(key, vals) \{\
+        return vals.reduce(function(t, s) \{\
+          return t + s;\
+        \});\
+      \}\
+    \}\
+\
+I'm able to "eval" the above. Peachy.\
+\
+The idea is to then compose these test files TDD style and then pass the map and reduce functions to mongo as strings in your production code. So now instead of pulling out executable javascript I want to parse this parse it into keys and values as strings. For example, the resulting ruby hash would be:\
+\
+    \{ "collection" => "[\\n  \{ _id: 14, gender "M", weight: 165 \},\\n   etc.",\
+      "expectedResults" => "[\\n    \{ gender: "M", value: 309 \},\\n    etc.",\
+      "map" => "function() \{\\n   emit(\{ gender: this.gender \}, this.weight);\\n\}",\
+      "reduce" => "function(key, vals) \{\\n  return vals.reduce(function(t, s) \{\\n return t + s;\\n     \});\\n  \}",\
+    \}\
+\
+So I could do something like the following in my production code:\
+\
+    map_reduce_set = MapReduceParser.parse(file_path)\
+    people = Connection.new(host,port).db(dbname).collection('people')\
+    people.mapreduce(map_reduce_set["map"],map_reduce_set["map"],:out=>'weights_by_gender')\
+\
+My initial thought was to parse the file as YAML since JSON is a subset of YAML but what I forgot is that the file is not JSON it is JavaScript (JSON is a data-interchange former and doesn't let you define functions).\
+\
+So can anyone think of a general and clever way to parse the top level hierarchy as a hash?\
+}

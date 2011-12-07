@@ -1,5 +1,9 @@
-{ 
-  "name" : "mr-tester", 
-  "version" : "0.1.0", 
-  "dependencies" : { "underscore" : "1.2.0", "jasmine-node" : "1.0.11" }
+{
+  "name" : "mr-tester",
+  "version" : "0.1.0",
+  "dependencies" : {
+    "underscore" : "1.2.0",
+    "jsdom" : "0.2.7",
+    "jasmine-node" : "1.0.11",
+    "htmlparser" : "1.7.3" }
 }
