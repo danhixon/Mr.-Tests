@@ -4,6 +4,6 @@
   "dependencies" : {
     "underscore" : "1.2.0",
     "jsdom" : "0.2.7",
-    "jasmine-node" : "1.0.11",
-    "htmlparser" : "1.7.3" }
+    "jasmine-node" : "1.0.11"
+	}
 }

@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<head>
-<script type="text/javascript">
 {
   collection: [
       { _id: 14, gender: "M", weight: 165 },
@@ -21,8 +18,3 @@
     });
   }
 }
-</script>
-</head>
-<body>
-</body>
-</html>
