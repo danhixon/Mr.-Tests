@@ -7,7 +7,7 @@
   ],
   expectedResults: [
     { gender: "M", value: 309 },
-    { gender: "F", value: 265 }
+    { gender: "F", value: 263 }
   ],
   map: function() {
     emit({ gender: this.gender }, this.weight);
